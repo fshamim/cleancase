@@ -1,12 +1,12 @@
 package com.ci.cleancase.android;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.ci.cleancase.framework.IClickable;
-import com.ci.ibus.IBus;
 import com.ci.cleanlog.L;
+import com.ci.ibus.IBus;
 import com.ci.inject.Injectable;
 
 import javax.inject.Inject;
@@ -15,7 +15,7 @@ import javax.inject.Inject;
 /**
  * Created by fshamim on 23.04.15.
  */
-public abstract class CleanActivity extends FragmentActivity implements IClickable, Injectable {
+public abstract class CleanActivity extends AppCompatActivity implements IClickable, Injectable {
 
     @Inject
     protected IBus mBus;
