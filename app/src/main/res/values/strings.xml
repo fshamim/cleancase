@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CleanCaseDemo</string>
+    <string name="call_web_api">Call Web Api</string>
+    <string name="enter_todo_id">Enter Todo Id</string>
+</resources>

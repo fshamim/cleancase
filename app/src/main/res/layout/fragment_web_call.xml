@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    tools:context="de.ci.gbm.smartscan.examples.web.ui.ExampleWebApiUseCaseFragment">
+
+    <EditText
+        android:id="@+id/et_webcall_userid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_todo_id"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_webcall_get"
+        android:text="@string/call_web_api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"/>
+    <TextView
+        android:id="@+id/tv_webcall_detail"
+        android:text="@android:string/untitled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
