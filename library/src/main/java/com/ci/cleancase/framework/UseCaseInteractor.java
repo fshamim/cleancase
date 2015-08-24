@@ -24,8 +24,7 @@ public abstract class UseCaseInteractor {
         this.mBus = bus;
         this.uiSchedular = uiSchedular;
         this.ioSchedular = ioSchedular;
-        subscriptions = new CompositeSubscription();
-        this.mBus.register(this);
+        this.subscriptions = new CompositeSubscription();
     }
 
     protected void sendInProgressEvent(String loadingMsg) {
