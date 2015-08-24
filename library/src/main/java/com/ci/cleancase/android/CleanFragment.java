@@ -1,15 +1,12 @@
 package com.ci.cleancase.android;
 
-import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ci.cleanlog.L;
 import com.ci.ibus.IBus;
 import com.ci.inject.Injectable;
 
@@ -26,7 +23,6 @@ public abstract class CleanFragment extends Fragment implements Injectable {
     @Inject
     protected IBus mBus;
 
-    protected FragmentActivity activity;
     private LayoutInflater inflater;
 
     @Override
@@ -34,16 +30,6 @@ public abstract class CleanFragment extends Fragment implements Injectable {
         this.performInjection(getActivity());
         super.onCreate(savedInstanceState);
         mBus.register(this);
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            this.activity = (FragmentActivity) activity;
-        } catch (Exception e) {
-            L.e("", "", e);
-        }
     }
 
     @Override

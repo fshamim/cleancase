@@ -44,11 +44,10 @@ public class ProgressUtils {
             dlgProgress = new ProgressDialog(activity);
             this.activity = activity;
         }
-        if (!dlgProgress.isShowing()) {
+        if (!dlgProgress.isShowing() && this.activity != null && !this.activity.isFinishing()) {
             try {
                 dlgProgress.show();
             } catch (WindowManager.BadTokenException ex) {
-                L.e("", "Progress show error", ex);
             }
             dlgProgress.setCancelable(false);
             if(Build.VERSION.SDK_INT >= 21 ){

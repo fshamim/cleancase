@@ -15,7 +15,7 @@ public interface IFragmentContainer {
      *
      * @param event Fragment Change event
      */
-    void onEvent(FragmentChangeEvent event);
+    void onEventMainThread(FragmentChangeEvent event);
 
     /**
      *

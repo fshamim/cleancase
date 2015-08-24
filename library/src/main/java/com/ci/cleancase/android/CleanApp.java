@@ -53,7 +53,7 @@ public abstract class CleanApp extends Application implements TextToSpeech.OnIni
      *
      * @param event event to be processed
      */
-    public void onEvent(ShowToastEvent event) {
+    public void onEventMainThread(ShowToastEvent event) {
         getSuperToast(this, event).show();
     }
 
@@ -62,7 +62,7 @@ public abstract class CleanApp extends Application implements TextToSpeech.OnIni
      *
      * @param event event to be processed
      */
-    public void onEvent(TTSEvent event) {
+    public void onEventMainThread(TTSEvent event) {
         // Speak and drop all pending entries in the playback queue.
         mTts.speak(event.getText(),
                 TextToSpeech.QUEUE_FLUSH,
@@ -74,7 +74,7 @@ public abstract class CleanApp extends Application implements TextToSpeech.OnIni
      *
      * @param event event to be processed
      */
-    public void onEvent(VibrateEvent event) {
+    public void onEventMainThread(VibrateEvent event) {
         vibrator.vibrate(event.getDuration());
     }
 

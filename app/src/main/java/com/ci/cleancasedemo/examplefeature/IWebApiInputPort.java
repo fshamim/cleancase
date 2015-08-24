@@ -1,6 +1,5 @@
 package com.ci.cleancasedemo.examplefeature;
 
-import com.ci.cleancase.framework.IUseCaseInputPort;
 import com.ci.cleancasedemo.examplefeature.resources.Todo;
 
 import lombok.Data;
@@ -9,7 +8,7 @@ import lombok.Data;
  * Input Port for Web Api Example Use case
  * Created by fshamim on 17.09.14.
  */
-public interface IWebApiInputPort extends IUseCaseInputPort {
+public interface IWebApiInputPort {
     /**
      * Get the TodoResource from the web api by its id.
      *

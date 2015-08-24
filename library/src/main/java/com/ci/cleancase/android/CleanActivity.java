@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.ci.cleancase.BuildConfig;
 import com.ci.cleancase.framework.IClickable;
 import com.ci.cleanlog.L;
 import com.ci.ibus.IBus;
@@ -34,7 +35,9 @@ public abstract class CleanActivity extends AppCompatActivity implements IClicka
     }
 
     public void onClick(View view) {
-        L.d("onClick");
+        if (BuildConfig.DEBUG) {
+            L.d("onClick");
+        }
         mBus.post(new IClickable.ClickEvent(view));
     }
 }
