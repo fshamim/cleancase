@@ -25,7 +25,7 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.github.fshamim:ibus:0.0.1'
-    compile 'com.github.fshamim:cleanlog:0.0.1'
+    compile 'com.github.jrodriguezpuigvert:cleanlog:0.0.1'
     compile 'com.github.fshamim:injectables:0.0.1'
 
     compile 'com.google.dagger:dagger:2.0'
