@@ -13,6 +13,8 @@ import com.ci.ibus.events.VibrateEvent;
 import com.ci.inject.Injectable;
 import com.github.johnpersano.supertoasts.SuperToast;
 
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -26,7 +28,7 @@ public abstract class CleanApp extends Application implements TextToSpeech.OnIni
     protected TextToSpeech mTts;
     @Inject
     Vibrator vibrator;
-
+    @Inject
     protected IBus mBus;
 
     @Override
@@ -53,6 +55,7 @@ public abstract class CleanApp extends Application implements TextToSpeech.OnIni
      *
      * @param event event to be processed
      */
+    @Subscribe
     public void onEventMainThread(ShowToastEvent event) {
         getSuperToast(this, event).show();
     }
@@ -62,6 +65,7 @@ public abstract class CleanApp extends Application implements TextToSpeech.OnIni
      *
      * @param event event to be processed
      */
+    @Subscribe
     public void onEventMainThread(TTSEvent event) {
         // Speak and drop all pending entries in the playback queue.
         mTts.speak(event.getText(),
@@ -74,6 +78,7 @@ public abstract class CleanApp extends Application implements TextToSpeech.OnIni
      *
      * @param event event to be processed
      */
+    @Subscribe
     public void onEventMainThread(VibrateEvent event) {
         vibrator.vibrate(event.getDuration());
     }

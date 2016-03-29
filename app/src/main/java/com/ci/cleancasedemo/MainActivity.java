@@ -11,6 +11,8 @@ import com.ci.ibus.events.ProgressFinishedEvent;
 import com.ci.ibus.events.UnauthorizedErrorEvent;
 import com.ci.ibus.events.UnknownErrorEvent;
 
+import org.greenrobot.eventbus.Subscribe;
+
 import javax.inject.Inject;
 
 
@@ -24,21 +26,21 @@ public class MainActivity extends CleanActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+    @Subscribe
     public void onEvent(InProgressEvent event) {
         progressUtils.showProgress(this, event.loadingMsg);
     }
-
+    @Subscribe
     public void onEvent(ProgressFinishedEvent event) {
         progressUtils.hideProgress();
     }
-
+    @Subscribe
     public void onEvent(UnknownErrorEvent event) {
         progressUtils.hideProgress();
         final String msg = "Unknown Error occurred: " + event.errorCode + " " + event.description;
         L.d(msg);
     }
-
+    @Subscribe
     public void onEvent(UnauthorizedErrorEvent event) {
         final String msg = "Session timeout. Please log in again";
         L.d(msg);

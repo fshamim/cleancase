@@ -2,6 +2,8 @@ package com.ci.cleancasedemo.examplefeature;
 
 import com.ci.cleancasedemo.examplefeature.resources.Todo;
 
+import org.greenrobot.eventbus.Subscribe;
+
 import lombok.Data;
 
 /**
@@ -14,6 +16,7 @@ public interface IWebApiInputPort {
      *
      * @param id
      */
+    @Subscribe
     void onEvent(GetTodoByIdEvent id);
 
     @Data

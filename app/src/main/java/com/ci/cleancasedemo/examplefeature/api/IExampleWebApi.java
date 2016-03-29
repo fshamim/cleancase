@@ -18,7 +18,7 @@ public interface IExampleWebApi {
      * @param todoId id
      * @return RxJava Observable with Todos detail.
      */
-    @GET("/todos/{todoId}")
+    @GET("/posts/{todoId}")
     Observable<Todo> getTodoById(@Path("todoId") String todoId);
 
 }
