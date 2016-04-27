@@ -13,14 +13,13 @@ import com.ci.cleancasedemo.examplefeature.interactor.ExampleWebApiUseCaseIntera
 import com.ci.ibus.IBus;
 import com.squareup.okhttp.OkHttpClient;
 
-import org.greenrobot.eventbus.EventBus;
-
 import javax.inject.Singleton;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 
 import dagger.Module;
 import dagger.Provides;
+import de.greenrobot.event.EventBus;
 import retrofit.RestAdapter;
 import retrofit.client.OkClient;
 import rx.Scheduler;

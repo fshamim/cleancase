@@ -6,8 +6,6 @@ import com.ci.cleancasedemo.examplefeature.api.IExampleWebApi;
 import com.ci.cleancasedemo.examplefeature.resources.Todo;
 import com.ci.ibus.IBus;
 
-import org.greenrobot.eventbus.Subscribe;
-
 import retrofit.RetrofitError;
 import rx.Observer;
 import rx.Scheduler;
@@ -25,7 +23,7 @@ public class ExampleWebApiUseCaseInteractor extends UseCaseInteractor implements
         this.exampleWebApi = exampleWebApi;
     }
 
-    @Subscribe
+    @Override
     public void onEvent(GetTodoByIdEvent event) {
         String id = event.todoId;
         sendInProgressEvent(null);
